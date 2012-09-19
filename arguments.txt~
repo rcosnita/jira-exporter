@@ -1,0 +1,2 @@
+susie: --format susie --username rcosnita --password **** --startat 0 --maxresults 1000 --workproject RAIN --version "Sprint 7"
+bulk: --format bulk --username rcosnita --password bronxtiger21 --startat 0 --maxresults 1000 --query "project='RAIN' and fixVersion='Sprint 7'"

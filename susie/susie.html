@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Project RAIN - Sprint 16 specification</title>
+
+<style type="text/css">
+body{
+	font-family: Calibri,"Times New Roman",sans;
+	font-size: 14px;
+}
+
+h1{
+	font-size: 24px;
+}
+
+h2{
+	font-size: 20px;
+	page-break-before: always;
+}
+
+h3{
+	font-size: 16px;
+}
+</style>
+</head>
+<body>
+
+<h1>RAIN - Sprint 16 Specification document</h1>
+
+<h2 style="page-break-before: avoid;">Goal</h2>
+
+<p>The goal of Sprint 16 is to create the Revolutionary prototype on RAIN and integrate DSSA within it. The look & feel of the final deliverable must be uniform.
+	<br/>
+	
+	</p>
+
+
+					<h2>RAIN Rendering Engine</h2>
+		
+		<p>Rendering engine is the heart of RAIN. It's the mechanism that makes all components processing / rendering non blocking. For an example imagine the following scenario: you have a dashboard with  thirty widgets added on it. Rendering engine will do the following processing:<br/>   <ul><li>load the aggregated markup of the dashboard</li></ul><br/>   <ul><li>each component which requires server side data will be replaced by placeholders that behaves like proxy. From Customer perspective this mean that the customer will receive feedback from application as fast as possible (response time = rendering time which today ~ 50ms).</li></ul><br/>   <ul><li>All the components arrive on the client when they are loaded. This will give customer a progressive loading behavior of the application which ensures continuous feedback.</li></ul><br/><br/>All user stories from this epic are pure technical. The results will be similar to big pipe results from Facebook. http://www.facebook.com/note.php?note_id=389414033919</p>
+		
+				
+		<h3>User stories</h3>
+		
+		<ol>
+						<li><h4>CSS Dependency Management & Delivery - <a href="http://issue.tool.1and1.com/browse/RAIN-360">RAIN-360</a> - (-1 USP)</h4>
+			
+			<p>As RAIN developer I want to correctly handle CSS dependencies and client-side delivery in an efficient way so that IE's hard limit of 31 style sheets is never reached. A more efficient way of rendering a component only after its CSS has arrived has to be implemented.<br/><br/><b>Acceptance</b><br/><br/><ul><li>The new delivery mode has to be showcased.</li></ul><br/><ul><li>Proof of how IE's hard limit is avoided.</li></ul><br/><ul><li>Show that CSS resources are cached correctly.</li></ul></p>
+			
+					</li>
+						</ol>
+				<h2>RAIN SDK</h2>
+		
+		<p>RAIN SDK is a command line tool that facilitate developers easy access to all RAIN features. In the SDK for 1&1 there will be different processes implemented like Technical editors translate / release or Release Managers release process. Each operation from RAIN SDK will provide help man pages for easy usage.<br/><br/>There is a good idea to see how Android SDK or Java SDK is structured and what operations are available. In addition, for best results in deciding command line arguments and how it can be invoke see gcc or g++ linux command lines.</p>
+		
+				
+		<h3>User stories</h3>
+		
+		<ol>
+						<li><h4>Logger implementation - <a href="http://issue.tool.1and1.com/browse/RAIN-324">RAIN-324</a> - (8 USP)</h4>
+			
+			<p>As RAIN developer I will implement the logger described in [RAIN-112] so that RAIN code output becomes usable and uniform.<br/><br/><b>Acceptance</b><br/><br/><ul><li>Implement the logger as described in [RAIN-112] (components logging support).</li></ul><br/><ul><li>Change the logger configuration level in external source.</li></ul><br/><ul><li>The client side logger must work correctly.</li></ul><br/><ul><li>Clean up the existing code so it uses the new logger (Raintime, client renderer).</li></ul></p>
+			
+					</li>
+				<li><h4>RAIN Code Coverage - <a href="http://issue.tool.1and1.com/browse/RAIN-383">RAIN-383</a> - (-1 USP)</h4>
+			
+			<p>As RAIN Developer I will implement the code coverage so that stakeholders can see how much of the code is covered by unit tests.<br/><br/><b>Acceptance</b><br/><br/><ul><li>The unified code coverage reports (server / client side) must be presented.</li></ul></p>
+			
+					</li>
+				<li><h4>RAIN CI - <a href="http://issue.tool.1and1.com/browse/RAIN-384">RAIN-384</a> - (-1 USP)</h4>
+			
+			<p>As RAIN Developer I will setup Jenkins so that stakeholders and RAIN Team can benefit from nightly build.<br/><br/><b>Acceptance</b><br/><br/><ul><li>Setup Jenkins to run RAIN unit tests, code coverage and integration tests.</li></ul><br/><ul><li>Explain how integration tests will be plugged into Jenkins.</li></ul></p>
+			
+					</li>
+						</ol>
+				<h2>RAIN Remoting</h2>
+		
+		<p>RAIN is real modular and distributed platform. RAIN resources (components) can be spreaded across multiple unbalanced RAIN nodes and still can be aggregated within a single application. For this to work remote components are a core feature of RAIN. When aggregating components that do not run in the same container (remote components) the following requirements need to be taken into consideration:<br/><br/>   <ul><li>RAIN must keep track of remote fragments session.</li></ul><br/>   <ul><li>RAIN must send aggregated page parameters to each remote fragment.</li></ul><br/><br/>More information about remote components are described on feature proposal: http://rainjs.github.com/rainjs/proposals/Features-proposal-remote-aggregation.html</p>
+		
+				
+		<h3>User stories</h3>
+		
+		<ol>
+						<li><h4>RAIN distributed websockets research - <a href="http://issue.tool.1and1.com/browse/RAIN-353">RAIN-353</a> - (21 USP)</h4>
+			
+			<p>As RAIN Developer I will research how asynchronous rendering engine can support web sockets in remoting scenario so that PSS Developers can deploy and manage only the components they are responsible for. The research will start from http://vm2384.development.lan:8080/sprint/proposals/remoting.html proposal.<br/><br/><b>Acceptance</b><br/><br/><ul><li>A feature proposal will be presented explaining how a request will look like and how websockets will be opened.</li></ul></p>
+			
+					</li>
+						</ol>
+				<h2>Revolutionary prototype</h2>
+		
+		<p>The revolutionary prototype is an initiative to create a new presentation strategy for 1&1 products. Below you can find several screen shots that emphasize new elements from the prototype:<br/><br/><ul><li>uniform navigation</li></ul><br/><ul><li>application contextual menu (application menu bar)</li></ul></p>
+		
+								<a href="http://issue.tool.1and1.com/secure/attachment/112080/application_contextual_menu.png">
+				<img src="application_contextual_menu.png" width="600" height="26" />
+			</a>
+				    						<a href="http://issue.tool.1and1.com/secure/attachment/112081/full_blown_workspace.png">
+				<img src="full_blown_workspace.png" width="600" height="356" />
+			</a>
+				    						<a href="http://issue.tool.1and1.com/secure/attachment/112082/left_side_navigation.png">
+				<img src="left_side_navigation.png" width="109" height="400" />
+			</a>
+				    		
+		<h3>User stories</h3>
+		
+		<ol>
+						<li><h4>Checkbox facelift - <a href="http://issue.tool.1and1.com/browse/RAIN-367">RAIN-367</a> - (1 USP)</h4>
+			
+			<p>As RAIN Developer I will face lift the checkbox control (and checkboxes group) so that PSS Developers enable their application with the latest DIY facelift.<br/><br/><b>Acceptance</b><br/><br/><ul><li>Checkbox control will be presented.</li></ul><br/><ul><li>Checkboxes group control will be presented.</li></ul><br/><ul><li>The API must not change.</li></ul></p>
+			
+											<a href="http://issue.tool.1and1.com/secure/attachment/112114/checkboxes_control.png">
+					<img src="checkboxes_control.png" width="248" height="145" />
+				</a>
+				    				</li>
+				<li><h4>Radio button face lift - <a href="http://issue.tool.1and1.com/browse/RAIN-368">RAIN-368</a> - (1 USP)</h4>
+			
+			<p>As RAIN Developer I will face lift the radio button control (+ radio buttons group) so that PSS Developers can easily enable their application with DIY Facelift radio buttons.<br/><br/><b>Acceptance</b><br/><br/><ul><li>Radio button component will be presented.</li></ul><br/><ul><li>Radio buttons group component will be presented.</li></ul><br/><ul><li>The API must not change.</li></ul></p>
+			
+					</li>
+				<li><h4>Loader indicator - <a href="http://issue.tool.1and1.com/browse/RAIN-369">RAIN-369</a> - (1 USP)</h4>
+			
+			<p>As RAIN Developer I will provide the loader (in DIY Facelift style) at platform level so that Customer can see a nice notification when time consuming process occur.<br/><br/><b>Acceptance</b><br/><br/><ul><li>Present the new loader.</li></ul></p>
+			
+											<a href="http://issue.tool.1and1.com/secure/attachment/112118/loader.png">
+					<img src="loader.png" width="241" height="63" />
+				</a>
+				    				</li>
+				<li><h4>Buttons face lift - <a href="http://issue.tool.1and1.com/browse/RAIN-370">RAIN-370</a> - (1 USP)</h4>
+			
+			<p>As RAIN Developer I will face lift the button component so that PSS Developers can easily enable their applications with DIY Facelift styled components.<br/><br/><b>Acceptance</b><br/><br/><ul><li>Present the new button.</li></ul><br/><ul><li>The API must not change.</li></ul></p>
+			
+											<a href="http://issue.tool.1and1.com/secure/attachment/112229/buttons.png">
+					<img src="buttons.png" width="299" height="179" />
+				</a>
+				    				</li>
+				<li><h4>Datagrid facelift - <a href="http://issue.tool.1and1.com/browse/RAIN-371">RAIN-371</a> - (8 USP)</h4>
+			
+			<p>As RAIN Developer I will face lift the datagrid component so that PSS Developers can easily enable their applications with DIY Facelift styled components.<br/><br/><b>Acceptance</b><br/><br/><ul><li>The datagrid component will be presented.</li></ul><br/><ul><li>The API must not change.</li></ul></p>
+			
+											<a href="http://issue.tool.1and1.com/secure/attachment/112231/datagrid.png">
+					<img src="datagrid.png" width="336" height="341" />
+				</a>
+				    				</li>
+				<li><h4>Progress bar face lift - <a href="http://issue.tool.1and1.com/browse/RAIN-372">RAIN-372</a> - (1 USP)</h4>
+			
+			<p>As RAIN Developer I will face lift the progress bar so the PSS Developers can easily enable their applications with DIY Facelift components.<br/><br/><b>Acceptance</b><br/><br/><ul><li>The progress bar component will be presented.</li></ul><br/><ul><li>The API must not change.</li></ul></p>
+			
+											<a href="http://issue.tool.1and1.com/secure/attachment/112235/progress_bar.png">
+					<img src="progress_bar.png" width="270" height="25" />
+				</a>
+				    				</li>
+				<li><h4>Text field face lift - <a href="http://issue.tool.1and1.com/browse/RAIN-373">RAIN-373</a> - (1 USP)</h4>
+			
+			<p>As RAIN Developer I will face lift text field component so that PSS Developers can enable their applications with DIY Facelift styled components.<br/><br/><b>Acceptance</b><br/><br/><ul><li>Text field component must be presented.</li></ul><br/><ul><li>The API must not change.</li></ul></p>
+			
+											<a href="http://issue.tool.1and1.com/secure/attachment/112238/field_box.png">
+					<img src="field_box.png" width="481" height="107" />
+				</a>
+				    				</li>
+				<li><h4>Drop down button facelift - <a href="http://issue.tool.1and1.com/browse/RAIN-374">RAIN-374</a> - (1 USP)</h4>
+			
+			<p>As RAIN Developer I will face lift the drop down button component so that PSS Developers can enable their applications with DIY Facelift styled components.<br/><br/><b>Acceptance</b><br/><br/><ul><li>The new drop down button component will be presented.</li></ul><br/><ul><li>The API must not change.</li></ul></p>
+			
+					</li>
+	
+</ol>
+
+
+</body>
+</html>

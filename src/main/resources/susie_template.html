@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Project $project - $version specification</title>
+
+<style type="text/css">
+body{
+	font-family: Calibri,"Times New Roman",sans;
+	font-size: 14px;
+}
+
+h1{
+	font-size: 24px;
+}
+
+h2{
+	font-size: 20px;
+	page-break-before: always;
+}
+
+h3{
+	font-size: 16px;
+}
+</style>
+</head>
+<body>
+
+<h1>$project - $version Specification document</h1>
+
+<h2 style="page-break-before: avoid;">Goal</h2>
+
+<p>$versionInfo.description
+	<br/>
+	
+	#foreach( $attachment in $versionInfo.attachments )
+		#if( $attachment.renderTag )
+		<a href="$attachment.url">
+			<$attachment.renderTag src="$attachment.name" width="$attachment.width" height="$attachment.height" />
+		</a>
+		#end
+    #end
+</p>
+
+#set ($closeOl = false)
+
+#foreach( $issue in $issues )
+	#if( $issue.type == "EPIC" )
+		#if( $closeOl )
+		</ol>
+		#end
+		<h2>$issue.summary</h2>
+		
+		<p>$issue.description</p>
+		
+		#foreach( $attachment in $issue.attachments )
+			#if( $attachment.renderTag )
+			<a href="$attachment.url">
+				<$attachment.renderTag src="$attachment.name" width="$attachment.width" height="$attachment.height" />
+			</a>
+			#end
+	    #end		
+		
+		<h3>User stories</h3>
+		
+		<ol>
+		#set ($closeOl = true)
+	#elseif( $issue.type == "STORY" )		
+		<li><h4>$issue.summary - <a href="$issue.hyperLink">$issue.id</a> - ($issue.storyPoints USP)</h4>
+			
+			<p>$issue.description</p>
+			
+			#foreach( $attachment in $issue.attachments )
+				#if( $attachment.renderTag )
+				<a href="$attachment.url">
+					<$attachment.renderTag src="$attachment.name" width="$attachment.width" height="$attachment.height" />
+				</a>
+				#end
+    		#end    		
+		</li>
+	#end
+#end
+
+#if( $closeOl )
+</ol>
+#end
+
+#set ($closeOl = false)
+
+</body>
+</html>

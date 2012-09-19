@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/PFX/!svn/ver/225437/people/rcosnita/jira-exporter/trunk/src/main/resources
+END
+config.properties
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/PFX/!svn/ver/252844/people/rcosnita/jira-exporter/trunk/src/main/resources/config.properties
+END
+susie_template.html
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/PFX/!svn/ver/228799/people/rcosnita/jira-exporter/trunk/src/main/resources/susie_template.html
+END
+bulk_template.html
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/PFX/!svn/ver/226274/people/rcosnita/jira-exporter/trunk/src/main/resources/bulk_template.html
+END

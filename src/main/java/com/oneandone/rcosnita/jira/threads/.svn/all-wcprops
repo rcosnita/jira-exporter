@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/PFX/!svn/ver/225460/people/rcosnita/jira-exporter/trunk/src/main/java/com/oneandone/rcosnita/jira/threads
+END
+IssueDownloaderLight.java
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/PFX/!svn/ver/225463/people/rcosnita/jira-exporter/trunk/src/main/java/com/oneandone/rcosnita/jira/threads/IssueDownloaderLight.java
+END
+ThreadPoolExecutor.java
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/PFX/!svn/ver/225460/people/rcosnita/jira-exporter/trunk/src/main/java/com/oneandone/rcosnita/jira/threads/ThreadPoolExecutor.java
+END
+AttachmentsDownloader.java
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/PFX/!svn/ver/225463/people/rcosnita/jira-exporter/trunk/src/main/java/com/oneandone/rcosnita/jira/threads/AttachmentsDownloader.java
+END
