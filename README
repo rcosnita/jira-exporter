@@ -35,5 +35,5 @@ Samples
 
 Directly in the source code you can find two samples that shows the output of the jira exporter:
 
-   * [BULK](http://google.com/)
-   * [SUSI](http://google.com/)
+   * [BULK](https://github.com/rcosnita/jira-exporter/blob/master/bulk/bulk.pdf?raw=true)
+   * [SUSI](https://github.com/rcosnita/jira-exporter/blob/master/susie/susie.pdf?raw=true)
