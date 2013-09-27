@@ -19,8 +19,8 @@ Getting started
 1. git clone git://github.com/rcosnita/jira-exporter.git
 2. cd jira-exporter
 3. mvn clean install
-4. For susie format execute: java -jar target/jira-exports-scrum-1.0-SNAPSHOT-jar-with-dependencies.jar --format bulk --username [your jira username] --password [your jira password] --startat 0 --maxresults 1000 --query "[your jira jql you want to execute]"
-5. For bulk format execute: java -jar target/jira-exports-scrum-1.0-SNAPSHOT-jar-with-dependencies.jar --format susie --username [your jira username] --password [your jira password] --startat 0 --maxresults 1000 --workproject '[your jira project id]' --version '[your jira version]'
+4. For bulk format execute: java -jar target/jira-exports-scrum-1.0-SNAPSHOT-jar-with-dependencies.jar --format bulk --username [your jira username] --password [your jira password] --startat 0 --maxresults 1000 --query "[your jira jql you want to execute]"
+5. For susie format execute: java -jar target/jira-exports-scrum-1.0-SNAPSHOT-jar-with-dependencies.jar --format susie --username [your jira username] --password [your jira password] --startat 0 --maxresults 1000 --workproject '[your jira project id]' --version '[your jira version]'
 
 Be aware that for susie document you need a structure like the following:
 
